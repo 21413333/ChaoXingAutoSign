@@ -40,7 +40,9 @@ jobs:
           BOTTOKEN: ${{ secrets.BOTTOKEN }}
           ADDRESS: ${{ secrets.ADDRESS }}
         run: |
-          pip install lxml
-          pip install pycryptodome
-          python ./AutoSign.py
+          pip install -i https://pypi.tuna.tsinghua.edu.cn/simple lxml
+          pip install -i https://pypi.tuna.tsinghua.edu.cn/simple pycryptodome
+          echo "开始执行签到"
+          python -u ./AutoSign.py
+          echo "执行结束"
 
